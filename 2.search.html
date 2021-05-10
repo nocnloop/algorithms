@@ -1,0 +1,81 @@
+<!--
+ * @Author: Qiuxue.Wu - LCFC
+ * @Date: 2021-05-10 10:51:00
+ * @LastEditors: Qiuxue.Wu - LCFC
+ * @LastEditTime: 2021-05-10 11:37:14
+ * @Description: file content
+ * @FilePath: \algorithms\2.search.html
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="root">
+        <ul>
+            <li>
+                <a href=""></a>
+            </li>
+            <li>
+
+            </li>
+            <li>
+
+            </li>
+        </ul>
+
+        <h1>
+            <span>
+
+            </span>
+        </h1>
+    </div>
+
+    <script>
+        // 深度优先遍历
+        function depth_fitst_search(node) {
+            let stack = [node]
+            let result = []
+
+            while (stack.length > 0) {
+                const last = stack.pop()
+                result.push(last.tagName)
+                for (let i = last.children.length - 1; i >= 0; i--) {
+                    stack.push(last.children[i])
+                }
+            }
+            return result
+        }
+
+        // 广度优先遍历
+        function breadth_first_search(node) {
+            let queue = [node]
+            let result = []
+            while (queue.length > 0) {
+                const last = queue.pop()
+                result.push(last.tagName)
+                for (let i = last.children.length - 1; i >= 0; i--) {
+                    queue.unshift(last.children[i])
+                }
+
+            }
+            return result
+        }
+
+        const root = document.getElementById('root')
+
+        console.log(depth_fitst_search(root));
+
+        console.log(breadth_first_search(root));
+
+
+
+    </script>
+</body>
+
+</html>
