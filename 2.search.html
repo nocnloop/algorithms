@@ -2,7 +2,7 @@
  * @Author: Qiuxue.Wu - LCFC
  * @Date: 2021-05-10 10:51:00
  * @LastEditors: Qiuxue.Wu - LCFC
- * @LastEditTime: 2021-05-10 11:37:14
+ * @LastEditTime: 2021-06-08 16:33:14
  * @Description: file content
  * @FilePath: \algorithms\2.search.html
 -->
@@ -19,7 +19,9 @@
     <div id="root">
         <ul>
             <li>
-                <a href=""></a>
+                <a>
+
+                </a>
             </li>
             <li>
 
@@ -30,6 +32,9 @@
         </ul>
 
         <h1>
+            <i>
+
+            </i>
             <span>
 
             </span>
@@ -59,7 +64,7 @@
             while (queue.length > 0) {
                 const last = queue.pop()
                 result.push(last.tagName)
-                for (let i = last.children.length - 1; i >= 0; i--) {
+                for (let i = 0; i < last.children.length; i++) {
                     queue.unshift(last.children[i])
                 }
 
